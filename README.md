@@ -2,3 +2,4 @@
 <h3>C++ project1;</h3>
 <h4>What Color What color do you Choose?🔴🟠🟡⚪🟤🟣🔵🟢</h4>
 <h5>Basically this is a childhood game </h5>
+<h5>This is the basic version of our childhood game without the use of GUI(Graphical User Interface).</h5>
