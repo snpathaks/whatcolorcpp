@@ -6,34 +6,35 @@
 #include <cstdlib>  // For rand() and srand()
 #include <ctime>    // For time()
 #include <limits>
+using namespace std;
 
 class ColorGame {
 private:
     struct Player {
-        std::string name;
+        string name;
         int score;
-        std::string currentColor;
+        string currentColor;
         
         Player() : score(0) {}  // Constructor for C++98
     };
 
     struct Category {
-        std::string name;
-        std::map<std::string, std::vector<std::string> > colorToItems;  // Space for C++98
+        string name;
+        map<std::string, std::vector<std::string> > colorToItems;  // Space for C++98
     };
 
-    std::vector<Player> players;
-    std::vector<Category> categories;
-    std::vector<std::string> colors;
+    vector<Player> players;
+    vector<Category> categories;
+    vector<std::string> colors;
 
     // ANSI color codes (work in Windows 11 Terminal)
-    const std::string RESET;
-    const std::string RED;
-    const std::string GREEN;
-    const std::string YELLOW;
-    const std::string BLUE;
+    const string RESET;
+    const string RED;
+    const string GREEN;
+    const string YELLOW;
+    const string BLUE;
 
-    std::map<std::string, std::string> colorMap;
+    map<string, string> colorMap;
 
 public:
     ColorGame() : 
