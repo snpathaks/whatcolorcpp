@@ -3,8 +3,8 @@
 #include <string>
 #include <map>
 #include <algorithm>
-#include <cstdlib>  // For rand() and srand()
-#include <ctime>    // For time()
+#include <cstdlib>  
+#include <ctime>    
 #include <limits>
 using namespace std;
 
@@ -15,19 +15,19 @@ private:
         int score;
         string currentColor;
         
-        Player() : score(0) {}  // Constructor for C++98
+        Player() : score(0) {}  
     };
 
     struct Category {
         string name;
-        map<std::string, std::vector<std::string> > colorToItems;  // Space for C++98
+        map<std::string, std::vector<std::string> > colorToItems;  
     };
 
     vector<Player> players;
     vector<Category> categories;
     vector<std::string> colors;
 
-    // ANSI color codes (work in Windows 11 Terminal)
+    
     const string RESET;
     const string RED;
     const string GREEN;
@@ -46,13 +46,13 @@ public:
         colors.push_back("Green");
         colors.push_back("Yellow");
 
-        // Initialize colorMap (simplified)
+        
         colorMap["Red"] = RED;
         colorMap["Blue"] = BLUE;
         colorMap["Green"] = GREEN;
         colorMap["Yellow"] = YELLOW;
 
-        // Seed random number generator
+        
         srand(static_cast<unsigned int>(time(NULL)));
         
         initializeCategories();
@@ -66,7 +66,7 @@ public:
     }
 
     void initializeCategories() {
-        // Simplified to one category for brevity
+        
         Category fruits;
         fruits.name = "Fruits";
         fruits.colorToItems["Red"].push_back("Apple");
@@ -78,7 +78,7 @@ public:
     }
 
     void clearScreen() {
-        system("cls");  // Windows-specific clear
+        system("cls");  
     }
 
     void setupPlayers() {
@@ -152,7 +152,7 @@ public:
     }
 
     std::string toLower(std::string str) {
-        std::transform(str.begin(), str.end(), str.begin(), ::tolower);  // C++98 compatible
+        std::transform(str.begin(), str.end(), str.begin(), ::tolower);  
         return str;
     }
 
@@ -223,7 +223,7 @@ public:
         displayRules();
         setupPlayers();
         
-        const int totalRounds = 3;  // Reduced for simplicity
+        const int totalRounds = 3;  
         for (int round = 1; round <= totalRounds; ++round) {
             playRound(round, totalRounds);
         }
